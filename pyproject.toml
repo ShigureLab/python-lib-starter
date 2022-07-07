@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "moelib"
+version = "0.1.0"
+description = ""
+authors = ["Nyakku Shigure <sigure.qaq@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0"
+black = "^22.1"
+pytest-parallel = "^0.1.1"
+isort = "^5.10.1"
+toml = "^0.10.2"
+
+[tool.poetry.scripts]
+moelib = "moelib.__main__:main"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

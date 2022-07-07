@@ -1,0 +1,38 @@
+name: Unit Test
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10"]
+        architecture: ["x64"]
+    name: Python ${{ matrix.python-version }} on ${{ matrix.architecture }} test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: ${{ matrix.architecture }}
+
+      - uses: Gr1N/setup-poetry@v7
+      - uses: actions/cache@v3
+        id: poetry-cache
+        with:
+          path: |
+            **/.venv
+          key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
+
+      - name: Install dependencies
+        if: steps.poetry-cache.outputs.cache-hit != 'true'
+        run: |
+          poetry install
+
+      - name: unit test
+        run: |
+          poetry run pytest --workers auto
