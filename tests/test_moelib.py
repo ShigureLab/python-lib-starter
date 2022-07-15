@@ -1,9 +1,15 @@
-import toml
+import sys
 
 from moelib import __version__
 
-with open("pyproject.toml", "r") as f:
-    project_info = toml.load(f)
+if sys.version_info >= (3, 11):  # pragma: >=3.11 cover
+    import tomllib
+else:  # pragma: <3.11 cover
+    import tomli as tomllib
+
+
+with open("pyproject.toml", "rb") as f:
+    project_info = tomllib.load(f)
 
 
 def test_version():
