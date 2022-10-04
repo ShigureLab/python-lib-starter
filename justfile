@@ -1,5 +1,8 @@
 VERSION := `poetry run python -c "import sys; from moelib import __version__ as version; sys.stdout.write(version)"`
 
+install:
+  poetry install
+
 test:
   poetry run pytest --workers auto
   just clean
@@ -7,6 +10,9 @@ test:
 fmt:
   poetry run isort .
   poetry run black .
+
+lint:
+  poetry run pyright moelib tests
 
 fmt-docs:
   prettier --write '**/*.md'
@@ -31,3 +37,15 @@ clean-builds:
   rm -rf build/
   rm -rf dist/
   rm -rf *.egg-info/
+
+ci-fmt-check:
+  poetry run isort --check-only .
+  poetry run black --check --diff .
+  prettier --check '**/*.md'
+
+ci-lint:
+  just lint
+
+ci-test:
+  poetry run pytest -m "(api or processor) and not (ci_skip or ignore)" --workers auto --reruns 3 --reruns-delay 1
+  just clean

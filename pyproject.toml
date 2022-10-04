@@ -15,6 +15,7 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: Implementation :: CPython",
 ]
 
@@ -27,6 +28,7 @@ black = "^22.1"
 pytest-parallel = "^0.1.1"
 isort = "^5.10.1"
 tomli = { version = "^2.0.1", python = "<3.11" }
+pyright = "^1.1.273"
 
 [tool.poetry.scripts]
 moelib = "moelib.__main__:main"
@@ -38,6 +40,11 @@ line-length = 120
 profile = "black"
 add_imports = ["from __future__ import annotations"]
 skip = ["setup.py", ".venv"]
+
+[tool.pyright]
+include = ["yutto", "tests"]
+pythonVersion = "3.9"
+typeCheckingMode = "strict"
 
 [build-system]
 requires = ["poetry-core>=1.1.0"]
