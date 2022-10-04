@@ -47,5 +47,5 @@ ci-lint:
   just lint
 
 ci-test:
-  poetry run pytest -m "(api or processor) and not (ci_skip or ignore)" --workers auto --reruns 3 --reruns-delay 1
+  poetry run pytest --workers auto --reruns 3 --reruns-delay 1
   just clean

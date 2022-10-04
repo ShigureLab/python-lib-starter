@@ -29,6 +29,7 @@ pytest-parallel = "^0.1.1"
 isort = "^5.10.1"
 tomli = { version = "^2.0.1", python = "<3.11" }
 pyright = "^1.1.273"
+pytest-rerunfailures = "^10.2"
 
 [tool.poetry.scripts]
 moelib = "moelib.__main__:main"
