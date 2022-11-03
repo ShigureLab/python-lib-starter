@@ -4,7 +4,7 @@ install:
   poetry install
 
 test:
-  poetry run pytest --workers auto
+  poetry run pytest
   just clean
 
 fmt:
@@ -47,5 +47,5 @@ ci-lint:
   just lint
 
 ci-test:
-  poetry run pytest --workers auto --reruns 3 --reruns-delay 1
+  poetry run pytest --reruns 3 --reruns-delay 1
   just clean
