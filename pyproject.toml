@@ -23,12 +23,12 @@ classifiers = [
 python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.0"
-black = "^22.1"
-isort = "^5.10.1"
+pytest = "^7.2"
+black = "^22.12"
+isort = "^5.11.3"
 tomli = { version = "^2.0.1", python = "<3.11" }
-pyright = "^1.1.273"
-pytest-rerunfailures = "^10.2"
+pyright = "^1.1.284"
+pytest-rerunfailures = "^10.3"
 
 [tool.poetry.scripts]
 moelib = "moelib.__main__:main"
