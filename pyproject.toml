@@ -28,7 +28,7 @@ black = "^22.12"
 isort = "^5.11.3"
 tomli = { version = "^2.0.1", python = "<3.11" }
 pyright = "^1.1.284"
-pytest-rerunfailures = "^10.3"
+pytest-rerunfailures = "^11.0"
 
 [tool.poetry.scripts]
 moelib = "moelib.__main__:main"
