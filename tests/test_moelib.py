@@ -1,16 +1,13 @@
 from __future__ import annotations
 
-import sys
+from pathlib import Path
+
+# This can be replaced with tomllib if you are using Python 3.11+
+import tomli as tomllib
 
 from moelib import __version__
 
-if sys.version_info >= (3, 11):  # pragma: >=3.11 cover
-    import tomllib
-else:  # pragma: <3.11 cover
-    import tomli as tomllib
-
-
-with open("pyproject.toml", "rb") as f:
+with Path("pyproject.toml").open("rb") as f:
     project_info = tomllib.load(f)
 
 

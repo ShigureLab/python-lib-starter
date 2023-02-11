@@ -23,12 +23,13 @@ classifiers = [
 python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.2"
+pytest = "^7.2.1"
 black = "^23.1"
-isort = "^5.11.3"
-tomli = { version = "^2.0.1", python = "<3.11" }
-pyright = "^1.1.284"
-pytest-rerunfailures = "^11.0"
+isort = "^5.12.0"
+tomli = "^2.0.1"
+pyright = "^1.1.293"
+pytest-rerunfailures = "^11.1"
+ruff = "^0.0.245"
 
 [tool.poetry.scripts]
 moelib = "moelib.__main__:main"
@@ -45,6 +46,30 @@ skip = ["setup.py", ".venv"]
 include = ["yutto", "tests"]
 pythonVersion = "3.9"
 typeCheckingMode = "strict"
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+select = [
+  # Pyflakes
+  "F",
+  # Pycodestyle
+  "E",
+  "W",
+  # Pyupgrade
+  "UP",
+  # Flake8-pyi
+  "PYI",
+  # Flake8-use-pathlib
+  "PTH",
+  # Yesqa
+  "RUF100",
+]
+ignore = [
+  "E501", # line too long, duplicate with black
+  "F401", # imported but unused, duplicate with pyright
+  "F841", # local variable is assigned to but never used, duplicate with pyright
+]
 
 [build-system]
 requires = ["poetry-core>=1.1.0"]

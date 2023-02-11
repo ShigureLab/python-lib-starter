@@ -13,6 +13,7 @@ fmt:
 
 lint:
   poetry run pyright moelib tests
+  poetry run ruff .
 
 fmt-docs:
   prettier --write '**/*.md'
