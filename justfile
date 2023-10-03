@@ -19,7 +19,14 @@ fmt-docs:
   prettier --write '**/*.md'
 
 build:
+  touch moelib/py.typed
   poetry build
+
+release:
+  @echo 'Tagging {{VERSION}}...'
+  git tag {{VERSION}}
+  @echo 'Push to GitHub to trigger publish process...'
+  git push --tags
 
 publish:
   touch moelib/py.typed
