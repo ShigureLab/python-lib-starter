@@ -32,7 +32,7 @@ jobs:
           just ci-install
           just build
 
-      - name: upload windows dists
+      - name: upload dists
         uses: actions/upload-artifact@v3
         with:
           name: release-dists
