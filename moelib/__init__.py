@@ -1,7 +1,7 @@
 # Meta information for the project.
 from __future__ import annotations
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __author__ = "Nyakku Shigure"
 __year__ = "2023"
 __project_info__ = {
