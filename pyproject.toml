@@ -44,7 +44,7 @@ add_imports = ["from __future__ import annotations"]
 skip = ["setup.py", ".venv"]
 
 [tool.pyright]
-include = ["yutto", "tests"]
+include = ["moelib", "tests"]
 pythonVersion = "3.9"
 typeCheckingMode = "strict"
 
