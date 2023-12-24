@@ -61,7 +61,7 @@ select = [
   "RUF100",
 ]
 ignore = [
-  "E501", # line too long, duplicate with black
+  "E501", # line too long, duplicate with ruff fmt
   "F401", # imported but unused, duplicate with pyright
   "F841", # local variable is assigned to but never used, duplicate with pyright
 ]
