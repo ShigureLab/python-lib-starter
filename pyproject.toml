@@ -28,7 +28,7 @@ pytest = "^8.0.0"
 tomli = "^2.0.1"
 pyright = "^1.1.293"
 pytest-rerunfailures = "^11.1"
-ruff = "^0.2.0"
+ruff = "^0.3.0"
 
 [tool.poetry.scripts]
 moelib = "moelib.__main__:main"
