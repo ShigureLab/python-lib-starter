@@ -24,11 +24,11 @@ classifiers = [
 python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0"
+pytest = "^8.1.1"
 tomli = "^2.0.1"
-pyright = "^1.1.293"
-pytest-rerunfailures = "^11.1"
-ruff = "^0.3.0"
+pyright = "^1.1.354"
+pytest-rerunfailures = "^14.0"
+ruff = "^0.3.3"
 
 [tool.poetry.scripts]
 moelib = "moelib.__main__:main"
