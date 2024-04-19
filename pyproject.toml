@@ -26,9 +26,9 @@ python = "^3.9"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.1.1"
 tomli = "^2.0.1"
-pyright = "^1.1.354"
+pyright = "^1.1.359"
 pytest-rerunfailures = "^14.0"
-ruff = "^0.3.3"
+ruff = "^0.4.1"
 
 [tool.poetry.scripts]
 moelib = "moelib.__main__:main"
