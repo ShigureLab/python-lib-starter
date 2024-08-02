@@ -117,25 +117,8 @@ dmypy.json
 # macOS
 .DS_Store
 
-# Media files
-*.aac
-*.mp3
-*.mp4
-*.m4s
-*.xml
-*.pb
-*.ass
-*.srt
-*.nfo
-
 # test files
 *.test.py
 
-# stub files
-py.typed
-
 # logs
 log
-
-# test files
-__test_files__

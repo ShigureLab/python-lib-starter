@@ -24,15 +24,14 @@ jobs:
         run: |
           npm install -g prettier
 
-      - name: Install poetry
-        run: pipx install poetry
+      - name: Install uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
 
       - name: Install python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           architecture: ${{ matrix.architecture }}
-          cache: 'poetry'
 
       - name: Install just
         uses: extractions/setup-just@v2
