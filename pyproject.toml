@@ -1,13 +1,13 @@
-[tool.poetry]
+[project]
 name = "moelib"
 version = "0.1.0"
 description = ""
-authors = ["Nyakku Shigure <sigure.qaq@gmail.com>"]
-license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/ShigureLab/moelib"
-repository = "https://github.com/ShigureLab/moelib"
+requires-python = ">=3.9"
+dependencies = []
+authors = [{ name = "Nyakku Shigure", email = "sigure.qaq@gmail.com" }]
 keywords = []
+license = { text = "MIT" }
 classifiers = [
   "Operating System :: OS Independent",
   "License :: OSI Approved :: MIT License",
@@ -21,18 +21,23 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.9"
+[project.urls]
+Homepage = "https://github.com/ShigureLab/moelib"
+Documentation = "https://github.com/ShigureLab/moelib"
+Repository = "https://github.com/ShigureLab/moelib"
+Issues = "https://github.com/ShigureLab/moelib/issues"
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.1.1"
-tomli = "^2.0.1"
-pyright = "^1.1.359"
-pytest-rerunfailures = "^14.0"
-ruff = "^0.5.0"
-
-[tool.poetry.scripts]
+[project.scripts]
 moelib = "moelib.__main__:main"
+
+[tool.uv]
+dev-dependencies = [
+  "pytest>=8.3.2",
+  "tomli>=2.0.1",
+  "pyright>=1.1.374",
+  "pytest-rerunfailures>=14.0",
+  "ruff>=0.5.6",
+]
 
 [tool.pyright]
 include = ["moelib", "tests"]
@@ -75,5 +80,5 @@ known-first-party = ["moelib"]
 "setup.py" = ["I"]
 
 [build-system]
-requires = ["poetry-core>=1.3.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,25 +1,24 @@
-VERSION := `poetry run python -c "import sys; from moelib import __version__ as version; sys.stdout.write(version)"`
+VERSION := `uv run python -c "import sys; from moelib import __version__ as version; sys.stdout.write(version)"`
 
 install:
-  poetry install
+  uv sync --all-extras --dev
 
 test:
-  poetry run pytest
+  uv run pytest
   just clean
 
 fmt:
-  poetry run ruff format .
+  uv run ruff format .
 
 lint:
-  poetry run pyright moelib tests
-  poetry run ruff check .
+  uv run pyright src/moelib tests
+  uv run ruff check .
 
 fmt-docs:
   prettier --write '**/*.md'
 
 build:
-  touch moelib/py.typed
-  poetry build
+  uv tool run --from build python -m build --installer uv .
 
 release:
   @echo 'Tagging v{{VERSION}}...'
@@ -27,12 +26,12 @@ release:
   @echo 'Push to GitHub to trigger publish process...'
   git push --tags
 
-publish:
-  touch moelib/py.typed
-  poetry publish --build
-  git tag "v{{VERSION}}"
-  git push --tags
-  just clean-builds
+# Missing command for uv
+# publish:
+#   poetry publish --build
+#   git tag "v{{VERSION}}"
+#   git push --tags
+#   just clean-builds
 
 clean:
   find . -name "*.pyc" -print0 | xargs -0 rm -f
@@ -46,15 +45,15 @@ clean-builds:
   rm -rf *.egg-info/
 
 ci-install:
-  poetry install --no-interaction --no-root
+  just install
 
 ci-fmt-check:
-  poetry run ruff format --check --diff .
+  uv run ruff format --check --diff .
   prettier --check '**/*.md'
 
 ci-lint:
   just lint
 
 ci-test:
-  poetry run pytest --reruns 3 --reruns-delay 1
+  uv run pytest --reruns 3 --reruns-delay 1
   just clean

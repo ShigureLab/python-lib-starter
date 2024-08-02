@@ -12,4 +12,4 @@ with Path("pyproject.toml").open("rb") as f:
 
 
 def test_version():
-    assert __version__ == project_info["tool"]["poetry"]["version"]
+    assert __version__ == project_info["project"]["version"]
