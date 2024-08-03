@@ -40,7 +40,7 @@ dev-dependencies = [
 ]
 
 [tool.pyright]
-include = ["moelib", "tests"]
+include = ["src/moelib", "tests"]
 pythonVersion = "3.9"
 typeCheckingMode = "strict"
 
