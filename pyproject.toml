@@ -36,7 +36,7 @@ dev-dependencies = [
   "tomli>=2.0.1",
   "pyright>=1.1.374",
   "pytest-rerunfailures>=14.0",
-  "ruff>=0.5.6",
+  "ruff>=0.6.2",
 ]
 
 [tool.pyright]
