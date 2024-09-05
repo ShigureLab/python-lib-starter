@@ -25,7 +25,7 @@ jobs:
           npm install -g prettier
 
       - name: Install uv
-        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+        uses: astral-sh/setup-uv@v1
 
       - name: Install python
         uses: actions/setup-python@v5
