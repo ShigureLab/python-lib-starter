@@ -97,9 +97,6 @@ required-imports = ["from __future__ import annotations"]
 known-first-party = ["moelib"]
 combine-as-imports = true
 
-[tool.ruff.lint.per-file-ignores]
-"setup.py" = ["I"]
-
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
