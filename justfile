@@ -26,12 +26,11 @@ release:
   @echo 'Push to GitHub to trigger publish process...'
   git push --tags
 
-# Missing command for uv
-# publish:
-#   poetry publish --build
-#   git tag "v{{VERSION}}"
-#   git push --tags
-#   just clean-builds
+publish:
+  uv build
+  uv publish
+  git push --tags
+  just clean-builds
 
 clean:
   find . -name "*.pyc" -print0 | xargs -0 rm -f
