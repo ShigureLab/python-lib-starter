@@ -33,11 +33,11 @@ moelib = "moelib.__main__:main"
 
 [tool.uv]
 dev-dependencies = [
-  "pytest>=8.3.2",
-  "tomli>=2.0.1",
-  "pyright>=1.1.374",
+  "pytest>=8.3.3",
+  "tomli>=2.0.2",
+  "pyright>=1.1.384",
   "pytest-rerunfailures>=14.0",
-  "ruff>=0.6.2",
+  "ruff>=0.6.9",
 ]
 
 [tool.pyright]
