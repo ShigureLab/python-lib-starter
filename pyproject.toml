@@ -31,13 +31,12 @@ Issues = "https://github.com/ShigureLab/moelib/issues"
 [project.scripts]
 moelib = "moelib.__main__:main"
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
+  "pyright>=1.1.386",
+  "ruff>=0.7.1",
   "pytest>=8.3.3",
-  "tomli>=2.0.2",
-  "pyright>=1.1.384",
   "pytest-rerunfailures>=14.0",
-  "ruff>=0.6.9",
 ]
 
 [tool.pyright]
