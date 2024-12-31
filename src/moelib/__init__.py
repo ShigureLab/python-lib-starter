@@ -3,7 +3,7 @@ from __future__ import annotations
 
 __version__ = "0.1.0"
 __author__ = "Nyakku Shigure"
-__year__ = "2024"
+__year__ = "2025"
 __project_info__ = {
     "name": __name__,
     "version": __version__,
