@@ -3,7 +3,7 @@ name = "moelib"
 version = "0.1.0"
 description = ""
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = []
 authors = [{ name = "Nyakku Shigure", email = "sigure.qaq@gmail.com" }]
 keywords = []
@@ -14,11 +14,11 @@ classifiers = [
   "Typing :: Typed",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   "Programming Language :: Python :: Implementation :: CPython",
 ]
 
@@ -34,19 +34,19 @@ moelib = "moelib.__main__:main"
 [dependency-groups]
 dev = [
   "pyright>=1.1.405",
-  "ruff>=0.13.0",
+  "ruff>=0.13.2",
   "pytest>=8.4.2",
   "pytest-rerunfailures>=16.0.1",
 ]
 
 [tool.pyright]
 include = ["src/moelib", "tests"]
-pythonVersion = "3.9"
+pythonVersion = "3.10"
 typeCheckingMode = "strict"
 
 [tool.ruff]
 line-length = 120
-target-version = "py39"
+target-version = "py310"
 
 [tool.ruff.lint]
 select = [
