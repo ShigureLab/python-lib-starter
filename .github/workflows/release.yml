@@ -32,7 +32,7 @@ jobs:
           just build
 
       - name: upload dists
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: release-dists
           path: dist/
@@ -48,7 +48,7 @@ jobs:
 
     steps:
       - name: Retrieve release distributions
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: release-dists
           path: dist/
@@ -65,7 +65,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: release-dists
           path: dist/
