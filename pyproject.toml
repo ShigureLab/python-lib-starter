@@ -7,10 +7,10 @@ requires-python = ">=3.10"
 dependencies = []
 authors = [{ name = "Nyakku Shigure", email = "sigure.qaq@gmail.com" }]
 keywords = []
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
 classifiers = [
   "Operating System :: OS Independent",
-  "License :: OSI Approved :: MIT License",
   "Typing :: Typed",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3",
