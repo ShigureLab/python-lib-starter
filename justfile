@@ -12,7 +12,7 @@ fmt:
   prettier --write '**/*.md'
 
 lint:
-  uv run pyright src/moelib tests
+  uv run ty check --error-on-warning src/moelib tests
   uv run ruff check .
 
 fmt-docs:
