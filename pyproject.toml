@@ -33,10 +33,10 @@ moelib = "moelib.__main__:main"
 
 [dependency-groups]
 dev = [
-  "ty>=0.0.77",
-  "ruff>=0.16.5",
+  "ty>=0.0.80",
+  "ruff>=0.16.7",
   "pytest>=9.1.1",
-  "pytest-rerunfailures>=16.6",
+  "pytest-rerunfailures>=16.6.1",
 ]
 
 [tool.ruff]
