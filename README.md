@@ -14,7 +14,3 @@ Just a template for quickly creating a python library.
 </p>
 
 Before the work starts, replace the `moelib` with the name of your library.
-
-The template requires Python 3.11 or newer. CI tests Python 3.11–3.15, including
-prereleases of Python 3.15 and its free-threaded build (`3.15t`), using the same
-locked dependencies and test suite.

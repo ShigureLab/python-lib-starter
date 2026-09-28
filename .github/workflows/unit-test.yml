@@ -17,7 +17,6 @@ jobs:
     name: unittest - Python ${{ matrix.python-version }} on ${{ matrix.architecture }}
     env:
       UV_PYTHON: ${{ matrix.python-version }}
-      UV_LOCKED: 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -40,21 +39,6 @@ jobs:
       - name: Install dependencies
         run: |
           just ci-install
-
-      - name: Verify Python runtime
-        run: |
-          uv run python - <<'PY'
-          import os
-          import sys
-          import sysconfig
-
-          requested = os.environ["UV_PYTHON"]
-          assert f"{sys.version_info.major}.{sys.version_info.minor}" == requested.removesuffix("t")
-          if requested.endswith("t"):
-              assert sysconfig.get_config_var("Py_GIL_DISABLED") == 1
-              assert not sys._is_gil_enabled()
-          print(sys.version)
-          PY
 
       - name: unit test
         run: |

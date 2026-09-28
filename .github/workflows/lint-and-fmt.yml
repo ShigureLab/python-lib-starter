@@ -16,9 +16,6 @@ jobs:
         python-version: ['3.11']
         architecture: ['x64']
     name: lint and fmt - Python ${{ matrix.python-version }} on ${{ matrix.architecture }}
-    env:
-      UV_PYTHON: ${{ matrix.python-version }}
-      UV_LOCKED: 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v7
